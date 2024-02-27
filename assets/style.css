@@ -2716,6 +2716,9 @@ hr {
   -webkit-box-pack: justify; /* Safari 6-11 */
   -ms-flex-pack: justify; /* IE 10 */
   justify-content: space-between;
+  -webkit-box-align: center; /* Safari 6-11 */
+  -ms-flex-align: center; /* IE 10 */
+  align-items: center;
 }
 
 .balance-text {
