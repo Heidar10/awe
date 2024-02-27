@@ -2826,7 +2826,7 @@ hr {
   content: url("./arrow.svg");
   position: absolute;
   top: 50%;
-  right: 10px; /* Відступ з правого боку */
+  right: 10px;
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
