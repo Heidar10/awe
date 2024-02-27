@@ -2696,12 +2696,25 @@ hr {
   gap: 20px;
 }
 
-.balance {
+/* .balance {
   padding: 15px;
   border-radius: 5px;
   border: 1px solid #ffd762;
   background: #22041e;
   display: flex;
+  justify-content: space-between;
+} */
+
+.balance {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ffd762;
+  background: #22041e;
+  display: -webkit-box; /* Safari 6-11 */
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -webkit-box-pack: justify; /* Safari 6-11 */
+  -ms-flex-pack: justify; /* IE 10 */
   justify-content: space-between;
 }
 
