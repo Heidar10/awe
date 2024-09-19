@@ -964,10 +964,14 @@
   }
   .background-authorization {
     /* background-image: url(./images/login/bg-mob.svg); */
-    background-image: url(./images/login/cropped.svg);
+    /* background-image: url(./images/login/cropped.svg);
     height: auto;
+    background-size: cover; */
     /* background-size: 100% 100%; */
-    background-size: cover;
+
+    /* .............. */
+    /* background-image: url(./images/login/bg-mob.svg); */
+    background-image: url(./images/login/cropped.svg);
   }
   .background-authorization.background-registration {
     height: auto;
