@@ -967,8 +967,6 @@
     background-image: url(./images/login/cropped.svg);
     height: auto;
     background-size: cover;
- 
- 
   }
   .background-authorization.background-registration {
     height: auto;
@@ -6120,6 +6118,7 @@ input[type="number"] {
   padding: 8px;
   font-size: 16px;
   line-height: 1.6;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
