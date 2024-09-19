@@ -11,15 +11,119 @@
     <div class="background-authorization">
       <div class="container">
         <div class="login">
-          <div class="custom-input">
-            <p class="custom-input-id-title">ID</p>
-            <input
-              type="text"
-              class="custom-input-id-desc"
-              disabled=""
-              value="ID 23772"
-            />
-          </div>
+          <section class="top-players board-section">
+            <p class="personal-title">Personal Details</p>
+
+            <div class="custom-input">
+              <p class="custom-input-id-title">ID</p>
+              <input
+                type="text"
+                class="custom-input-id-desc"
+                disabled=""
+                value="ID 23772"
+              />
+            </div>
+
+            <div class="personal-info">
+              <div class="custom-input">
+                <p class="custom-input-title">Nickname</p>
+                <input
+                  type="text"
+                  class="custom-input-desc"
+                  disabled=""
+                  value="Jake"
+                />
+              </div>
+              <div class="custom-input">
+                <p class="custom-input-title">First Name</p>
+                <input
+                  type="text"
+                  class="custom-input-desc"
+                  disabled=""
+                  value="H"
+                />
+              </div>
+              <div class="custom-input">
+                <p class="custom-input-title">Last Name</p>
+                <input
+                  type="text"
+                  class="custom-input-desc"
+                  disabled=""
+                  value="H"
+                />
+              </div>
+              <div class="custom-input">
+                <p class="custom-input-title">Phone number</p>
+                <input
+                  type="tel"
+                  class="custom-input-desc"
+                  disabled=""
+                  value="0931111111"
+                />
+              </div>
+              <div class="custom-input">
+                <p class="custom-input-title">Email</p>
+                <input
+                  type="email"
+                  class="custom-input-desc"
+                  disabled=""
+                  value="natawa3882@janfab.com"
+                />
+              </div>
+            </div>
+
+            <p class="personal-title">Change Password</p>
+
+            <form
+              id="change-password-form"
+              action="/en/cabinet/client/settings"
+              method="post"
+            >
+              <input
+                type="hidden"
+                name="_csrf"
+                value="bCRdLjNy2hmGQm2GEgZlKjeRFduSXt5mrGV3GYwsqAsvfmkcAhqRerIoMuNVbixkXPNsrs0wjyLbBiJqxEPxYQ=="
+              />
+
+              <div class="personal-info">
+                <div class="custom-input" style="border: 1px solid #8c5b82">
+                  <p class="custom-input-title">Current Password</p>
+                  <div class="form-group row field-changepasswordform-password">
+                    <div class="col-sm-9 col-sm-10 offset-sm-2">
+                      <input
+                        type="text"
+                        id="changepasswordform-password"
+                        class="custom-input-desc"
+                        name="ChangePasswordForm[password]"
+                      />
+
+                      <div class="invalid-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="custom-input" style="border: 1px solid #8c5b82">
+                  <p class="custom-input-title">New Password</p>
+                  <div
+                    class="form-group row field-changepasswordform-newpassword required"
+                  >
+                    <div class="col-sm-9 col-sm-10 offset-sm-2">
+                      <input
+                        type="text"
+                        id="changepasswordform-newpassword"
+                        class="custom-input-desc"
+                        name="ChangePasswordForm[newPassword]"
+                        aria-required="true"
+                      />
+
+                      <div class="invalid-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-personal-info mt-3">Save</button>
+            </form>
+          </section>
           <img
             src="./assets/images/login/logo_2.svg"
             alt=""
