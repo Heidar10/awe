@@ -963,15 +963,9 @@
     width: 95%;
   }
   .background-authorization {
-    /* background-image: url(./images/login/bg-mob.svg); */
-    /* background-image: url(./images/login/cropped.svg);
-    height: auto;
-    background-size: cover; */
-    /* background-size: 100% 100%; */
-
-    /* .............. */
-    /* background-image: url(./images/login/bg-mob.svg); */
     background-image: url(./images/login/cropped.svg);
+    height: auto;
+    background-size: cover;
   }
   .background-authorization.background-registration {
     height: auto;
