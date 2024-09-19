@@ -965,7 +965,7 @@
   .background-authorization {
     background-image: url(./images/login/login_mobile.png);
     height: auto;
-    background-size: 100%;
+    background-size: 100% 100%;
   }
   .background-authorization.background-registration {
     height: auto;
