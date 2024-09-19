@@ -6113,12 +6113,14 @@ input[type="number"] {
   margin-bottom: 5px;
 }
 
+.custom-input:first-of-type {
+  align-items: center;
+}
 .custom-input {
   border: 1px solid #ccc;
   padding: 8px;
   font-size: 16px;
   line-height: 1.6;
-  align-items: center;
   display: flex;
   justify-content: space-between;
   border-radius: 5px;
