@@ -963,7 +963,7 @@
     width: 95%;
   }
   .background-authorization {
-    background-image: url(./images/login/login_mobile.png);
+    background-image: url(./images/login/bg-mob.svg);
     height: auto;
     background-size: 100% 100%;
   }
