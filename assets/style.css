@@ -963,7 +963,8 @@
     width: 95%;
   }
   .background-authorization {
-    background-image: url(./images/login/bg-mob.svg);
+    /* background-image: url(./images/login/bg-mob.svg); */
+    background-image: url(./images/login/Crop_bg-mob.svg);
     height: auto;
     /* background-size: 100% 100%; */
     background-size: cover;
