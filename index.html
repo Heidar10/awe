@@ -3,147 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deposit</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./assets/reset.css" />
     <link rel="stylesheet" href="./assets/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&family=Montserrat:wght@400;700&family=Sawarabi+Mincho&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <div class="block">
-      <main class="battleroom-background forms deposit">
-        <div class="battleroom">
-          <div class="nav">
-            <img
-              src="./assets/images/login/logo_2.svg"
-              class="battleroom-logo"
-              alt=""
-            />
-            <a href="./battleroom-live.html">
-              <img
-                src="./assets/images/battleroom-open/battle-room-2.svg"
-                alt=""
-              />
-            </a>
-            <a href="./viproom-open.html">
-              <img src="./assets/images/battleroom-open/vip-room.svg" alt="" />
-            </a>
-            <a href="./pokerroom-open.html">
-              <img
-                src="./assets/images/battleroom-open/poker-room.svg"
-                alt=""
-              />
-            </a>
-            <a href="./stockvsstock-open.html">
-              <img src="./assets/images/battleroom-open/stock.svg" alt="" />
-            </a>
-
-            <a href="./battleroom-live.html" class="nav-btn"
-              ><img
-                src="./assets/images/battleroom-open/sword.svg"
-                alt=""
-              />BATTLE ROOM</a
-            >
-            <a href="./viproom-open.html" class="nav-btn"
-              ><img
-                src="./assets/images/battleroom-open/crown-icon.svg"
-                alt=""
-              />VIP ROOM</a
-            >
-            <a href="./pokerroom-open.html" class="nav-btn"
-              ><img
-                src="./assets/images/battleroom-open/poker.svg"
-                alt=""
-              />POKER ROOM</a
-            >
-            <a href="./stockvsstock-open.html" class="nav-btn"
-              ><img
-                src="./assets/images/battleroom-open/candles.svg"
-                alt=""
-              />STOCK VS STOCK</a
-            >
-          </div>
-
-          <div class="battleroom-filter-menu">
-            <div class="battleroom-filter">
-              <button class="filter-button active">Deposit</button>
-            </div>
-
-            <div class="first-part">
-              <div class="battleroom-filter-adaptive">
-                <button class="filter-button active">Deposit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <section class="board-section">
-          <div class="balance">
-            <p class="balance-text">Main Balance</p>
-            <p class="balance-text" style="color: #f8d05f">1,000 USDT</p>
-          </div>
-
-          <div class="refill-balance">
-            <div class="payment-method">
-              <p class="refill-balance-title">Payment method</p>
-              <select id="wallets" onchange="toggleElements()">
-                <option value="usdt">USDT wallet</option>
-                <option value="paypal">PayPal</option>
-              </select>
-            </div>
-            <div class="amount">
-              <p class="refill-balance-title">Amount</p>
-              <div class="amount-input">
-                <input type="text" class="input" value="0" />
-                <button class="currency">USDT</button>
-              </div>
-            </div>
-          </div>
-
-          <a href="#" class="submit">Submit</a>
-
-          <p class="address" id="walletAddress">
-            <span style="color: #fff">Wallet address :</span>
-            3JrD7PqKSuoa7Cr4iWwgD3WXbhRkmAcXHB
-            <img src="./assets/images/copy.svg" alt="" id="copyButton" />
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr)">
-            <img src="./aapl.svg" alt="" style="inline-size: fit-content" />
-            <img src="./ads.svg" alt="" style="inline-size: fit-content" />
-            <img src="./amzn.svg" alt="" style="inline-size: fit-content" />
-            <img src="./bk.svg" alt="" style="inline-size: fit-content" />
-            <img src="./cvx.svg" alt="" style="inline-size: fit-content" />
-            <img src="./dis.svg" alt="" style="inline-size: fit-content" />
-            <img src="./f.svg" alt="" style="inline-size: fit-content" />
-            <img src="./fb.svg" alt="" style="inline-size: fit-content" />
-            <img src="./fb2.svg" alt="" style="inline-size: fit-content" />
-            <img src="./fdx.svg" alt="" style="inline-size: fit-content" />
-            <img src="./gm.svg" alt="" style="inline-size: fit-content" />
-            <img src="./googl.svg" alt="" style="inline-size: fit-content" />
-            <img src="googl2.svg" alt="" style="inline-size: fit-content" />
-            <img src="./gs.svg" alt="" style="inline-size: fit-content" />
-            <img src="./ibm.svg" alt="" style="inline-size: fit-content" />
-            <img src="./intc.svg" alt="" style="inline-size: fit-content" />
-            <img src="./jnj.svg" alt="" style="inline-size: fit-content" />
-            <img src="jpm.svg" alt="" style="inline-size: fit-content" />
-          </div>
-        </section>
-
-        <footer class="login-footer">
-          <p class="footer-title">Regulations & Partners</p>
+    <div class="background-authorization">
+      <div class="container">
+        <div class="login">
           <img
-            src="./assets/images/login/partners.svg"
-            style="inline-size: fit-content"
+            src="./assets/images/login/logo_2.svg"
             alt=""
+            class="authorization-logo"
           />
-          <p class="footer-copyright">
-            © 2024 StockBattle. All rights reserved.
+
+          <p class="authorization-title">
+            Join now for Real Money on <br />
+            <span class="span">Live Casino stockbattle</span>
           </p>
-        </footer>
-      </main>
+
+          <form class="login-form">
+            <div class="form-input">
+              <input type="text" class="form-input-item" placeholder="Login*" />
+              <input
+                type="password"
+                class="form-input-item"
+                placeholder="Password*"
+              />
+            </div>
+
+            <a href="./battleroom-open.html" class="login-btn">Join Now</a>
+
+            <p class="clue">
+              <a href="./forgot-password.html" class="desc"
+                >I forgot my password</a
+              >
+              <br />
+              If you are not yet registered, then go through the
+              <a href="./registration.html" class="desc">registration</a>
+              first.
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <footer class="login-footer">
+        <p class="footer-title">Regulations & Partners</p>
+        <img
+          src="./assets/images/login/partners.svg"
+          style="inline-size: fit-content"
+          alt=""
+        />
+        <p class="footer-copyright">© 2024 StockBattle. All rights reserved.</p>
+      </footer>
     </div>
   </body>
-  <script src="./assets/script.js"></script>
 </html>
