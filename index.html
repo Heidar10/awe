@@ -3,172 +3,1344 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>My battles Active</title>
     <link rel="stylesheet" href="./assets/reset.css" />
     <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;900&family=Montserrat:wght@400;700&family=Sawarabi+Mincho&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="background-authorization">
-      <div class="container">
-        <div class="login">
-          <section class="top-players board-section">
-            <p class="personal-title">Personal Details</p>
+    <div class="loader-background">
+      <div class="loader-wrapper">
+        <img src="./assets/images/icons/logo_preloader.svg" alt="" />
+        <div class="loader"></div>
+      </div>
+    </div>
+    <div class="block block-1-mybattles">
+      <header class="header">
+        <div class="container">
+          <div class="id-player">
+            <img src="./assets/images/battleroom-open/player.svg" alt="" />
+            <p class="id-player-desc">
+              Davis <br />
+              <span style="color: #f8d05f; font-size: 16px">#2114968</span>
+            </p>
+          </div>
 
-            <div class="custom-input">
-              <p class="custom-input-id-title">ID</p>
-              <input
-                type="text"
-                class="custom-input-id-desc"
-                disabled=""
-                value="ID 23772"
-              />
-            </div>
+          <div class="account">
+            <img src="./assets/images/battleroom-open/shield.svg" alt="" />
+            <p class="account-info">
+              <span style="color: #ff3449">Account not verified</span> <br />
+              <a href="#" onclick="showNextPopup('firstPopup')">Verify Now</a>
+            </p>
+          </div>
+          <button class="aside-btn"><p class="desc">Marshal</p></button>
 
-            <div class="personal-info">
-              <div class="custom-input">
-                <p class="custom-input-title">Nickname</p>
-                <input
-                  type="text"
-                  class="custom-input-desc"
-                  disabled=""
-                  value="Jake"
+          <div id="firstPopup" class="popup prompt-container-verification">
+            <form>
+              <div class="prompt-content">
+                <img
+                  src="./assets/images/battleroom-open/plus.svg"
+                  class="prompt-icon prompt-icon-plus-ver"
+                  alt=""
                 />
-              </div>
-              <div class="custom-input">
-                <p class="custom-input-title">First Name</p>
-                <input
-                  type="text"
-                  class="custom-input-desc"
-                  disabled=""
-                  value="H"
+                <img
+                  src="./assets/images/verification/verification.svg"
+                  class="prompt-icon"
+                  alt=""
                 />
+                <p class="prompt-title" style="padding: 0">
+                  Let's get you verified
+                </p>
+                <p class="prompt-desc white">
+                  Before you start, prepare your identity document and make sure
+                  it is valid.
+                </p>
+                <p class="prompt-desc white">
+                  We also require you to agree to the processing of your
+                  personal data:
+                </p>
+                <p
+                  class="prompt-desc white"
+                  style="font-size: 16px; font-weight: 500"
+                >
+                  I'm a resident or live in:
+                </p>
+                <div class="verify-block-checkmark">
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox1" />
+                    <label for="idCardCheckbox1" class="desc white"
+                      >United States Of America
+                    </label>
+                  </div>
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox2" />
+                    <label for="idCardCheckbox2" class="desc white"
+                      >Other</label
+                    >
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  class="btn-continue"
+                  onclick="hidePopup('firstPopup'); showNextPopup('secondPopup')"
+                >
+                  Continue
+                </button>
               </div>
-              <div class="custom-input">
-                <p class="custom-input-title">Last Name</p>
-                <input
-                  type="text"
-                  class="custom-input-desc"
-                  disabled=""
-                  value="H"
+            </form>
+          </div>
+          <div id="secondPopup" class="popup prompt-container-verification">
+            <form>
+              <div class="prompt-content">
+                <img
+                  src="./assets/images/battleroom-open/plus.svg"
+                  class="prompt-icon prompt-icon-plus-ver"
+                  alt=""
                 />
-              </div>
-              <div class="custom-input">
-                <p class="custom-input-title">Phone number</p>
-                <input
-                  type="tel"
-                  class="custom-input-desc"
-                  disabled=""
-                  value="0931111111"
+                <img
+                  src="./assets/images/verification/verification.svg"
+                  class="prompt-icon"
+                  alt=""
                 />
+                <p class="prompt-title" style="padding: 0">
+                  Let's get you verified
+                </p>
+                <p class="desc white" style="padding: 0; text-align: center">
+                  Identity document
+                </p>
+                <img
+                  src="./assets/images/verification/step-1.svg"
+                  class="prompt-icon"
+                  alt=""
+                />
+                <p class="desc white">Select issuing country</p>
+                <div class="dropdown-country">
+                  <button onclick="toggleDropdown()" class="dropbtn">
+                    <img
+                      src="./assets/images/flags/usa.svg"
+                      style="height: 25px"
+                      alt=""
+                    />
+                    United States
+                    <div class="ver-aroow">
+                      <img
+                        src="./assets/images/verification/arrow.svg"
+                        alt=""
+                      />
+                    </div>
+                  </button>
+                </div>
+                <p class="desc white">Choose your document type</p>
+                <div class="verify-block-checkmark">
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox3" />
+                    <label for="idCardCheckbox3" class="desc white"
+                      >ID card
+                    </label>
+                  </div>
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox4" />
+                    <label for="idCardCheckbox4" class="desc white"
+                      >Passport</label
+                    >
+                  </div>
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox5" />
+                    <label for="idCardCheckbox5" class="desc white"
+                      >Residence permit</label
+                    >
+                  </div>
+                  <div class="choice">
+                    <input type="checkbox" id="idCardCheckbox6" />
+                    <label for="idCardCheckbox6" class="desc white"
+                      >Driver`slicense</label
+                    >
+                  </div>
+                </div>
+                <p class="desc white">The document should be:</p>
+                <p class="desc white">- bright and clear,</p>
+                <p class="desc white">
+                  - all corners of the document should be visible.
+                </p>
+                <div class="upload">
+                  <input type="file" id="fileInput" name="fileInput" />
+                  <label for="fileInput">
+                    <img
+                      class="upload-img"
+                      src="./assets/images/verification/upload.svg"
+                      alt="Загрузить файл"
+                    />
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  class="btn-continue"
+                  onclick="hidePopup('secondPopup'); showNextPopup('thirdPopup')"
+                >
+                  Next
+                </button>
               </div>
-              <div class="custom-input">
-                <p class="custom-input-title">Email</p>
+            </form>
+          </div>
+          <div id="thirdPopup" class="popup prompt-container-verification">
+            <form>
+              <div class="prompt-content">
+                <img
+                  src="./assets/images/battleroom-open/plus.svg"
+                  class="prompt-icon prompt-icon-plus-ver"
+                  alt=""
+                />
+                <img
+                  src="./assets/images/verification/verification.svg"
+                  class="prompt-icon"
+                  alt=""
+                />
+                <p class="prompt-title" style="padding: 0">Step 2</p>
+                <p class="desc white" style="padding: 0; text-align: center">
+                  Email verification
+                </p>
+                <img
+                  src="./assets/images/verification/step-2.svg"
+                  class="prompt-icon"
+                  alt=""
+                />
+                <p class="desc white">Enter your email</p>
                 <input
                   type="email"
-                  class="custom-input-desc"
-                  disabled=""
-                  value="natawa3882@janfab.com"
+                  name=""
+                  class="input-email"
+                  placeholder="Email*"
+                  id=""
                 />
-              </div>
-            </div>
-
-            <p class="personal-title">Change Password</p>
-
-            <form
-              id="change-password-form"
-              action="/en/cabinet/client/settings"
-              method="post"
-            >
-              <input
-                type="hidden"
-                name="_csrf"
-                value="bCRdLjNy2hmGQm2GEgZlKjeRFduSXt5mrGV3GYwsqAsvfmkcAhqRerIoMuNVbixkXPNsrs0wjyLbBiJqxEPxYQ=="
-              />
-
-              <div class="personal-info">
-                <div class="custom-input" style="border: 1px solid #8c5b82">
-                  <p class="custom-input-title">Current Password</p>
-                  <div class="form-group row field-changepasswordform-password">
-                    <div class="col-sm-9 col-sm-10 offset-sm-2">
-                      <input
-                        type="text"
-                        id="changepasswordform-password"
-                        class="custom-input-desc"
-                        name="ChangePasswordForm[password]"
-                      />
-
-                      <div class="invalid-feedback"></div>
-                    </div>
-                  </div>
+                <div class="verification-code-block">
+                  <input
+                    type="text"
+                    placeholder="_ _ _ _"
+                    class="enter-code"
+                    maxlength="4"
+                    pattern="[0-9]{4}"
+                  />
+                  <button type="submit" class="send-code">Send code</button>
                 </div>
-                <div class="custom-input" style="border: 1px solid #8c5b82">
-                  <p class="custom-input-title">New Password</p>
-                  <div
-                    class="form-group row field-changepasswordform-newpassword required"
-                  >
-                    <div class="col-sm-9 col-sm-10 offset-sm-2">
-                      <input
-                        type="text"
-                        id="changepasswordform-newpassword"
-                        class="custom-input-desc"
-                        name="ChangePasswordForm[newPassword]"
-                        aria-required="true"
-                      />
-
-                      <div class="invalid-feedback"></div>
-                    </div>
-                  </div>
-                </div>
+                <button
+                  type="button"
+                  class="btn-continue"
+                  onclick="hidePopup('thirdPopup'); showNextPopup('fourthPopup')"
+                >
+                  Continue
+                </button>
               </div>
-
-              <button type="submit" class="btn-personal-info mt-3">Save</button>
             </form>
-          </section>
-          <img
-            src="./assets/images/login/logo_2.svg"
-            alt=""
-            class="authorization-logo"
-          />
+          </div>
+          <div id="fourthPopup" class="popup prompt-container-verification">
+            <div class="prompt-content">
+              <div class="confetti">
+                <div class="successfully-verified">
+                  <img
+                    src="./assets/images/verification/verification.svg"
+                    class="prompt-icon"
+                    style="margin: 0 auto"
+                    alt=""
+                  />
+                  <p class="prompt-title" style="padding: 0">
+                    Successfully verified
+                  </p>
+                  <p class="desc white" style="padding: 0; text-align: center">
+                    You are now verified!
+                  </p>
+                  <a
+                    href="./battleroom-live.html"
+                    class="btn-continue"
+                    onclick="hidePopup('fourthPopup')"
+                  >
+                    Ok
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <p class="authorization-title">
-            Join now for Real Money on <br />
-            <span class="span">Live Casino stockbattle</span>
-          </p>
+          <div class="account-action">
+            <div class="account-balance">
+              <a href="#" class="main-balance-btn" style="color: #fff">
+                <img src="./assets/images/battleroom-open/bank.svg" alt="" />
+                <p class="desc">Main <br />Balance</p>
+                <p class="desc green">₮ 1,000</p>
+              </a>
+              <hr class="table-hr" />
+              <div class="row2">
+                <a href="#" class="score-points-btn">
+                  <img src="./assets/images/icons/cup.svg" alt="" />
+                  <p class="desc">
+                    Score Points
+                    <br />
+                    <span class="green"> ✪ 234572</span>
+                  </p>
+                </a>
+                <hr class="hr-vertical" />
+                <a href="#" class="battlecoin-btn">
+                  <img src="./assets/images/icons/battlecoine.svg" alt="" />
+                  <p class="desc">
+                    Battle coin
+                    <br />
+                    <span class="green"> 100</span>
+                  </p>
+                </a>
+              </div>
+            </div>
+            <a href="./deposit.html" class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/deposit.svg"
+                alt=""
+              />Deposit</a
+            >
+            <a href="./withdrawal.html" class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/withdrawal.svg"
+                alt=""
+              />Withdrawal</a
+            >
+            <a href="./transactions.html" class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/transaction.svg"
+                alt=""
+              />Tranactions</a
+            >
+            <a
+              href="./personal-settings-notverified.html"
+              class="account-action-btn"
+              ><img
+                src="./assets/images/battleroom-open/settings.svg"
+                alt=""
+              />Personal Settings</a
+            >
+            <a href="./mybattles.html" class="account-action-btn click"
+              ><img src="./assets/images/icons/sword.svg" alt="" /> My
+              Battles</a
+            >
+            <a href="./leaderboard.html" class="account-action-btn"
+              ><img src="./assets/images/battleroom-open/crown.svg" alt="" />
+              Leaderboard</a
+            >
+            <a href="./followers.html" class="account-action-btn"
+              ><img src="./assets/images/icons/people.svg" alt="" />
+              Followers</a
+            >
+            <a href="./support.html" class="account-action-btn"
+              ><img src="./assets/images/battleroom-open/support.svg" alt="" />
+              Support</a
+            >
+          </div>
+        </div>
+      </header>
+      <header class="header-adaptive">
+        <div class="container">
+          <div class="header-container">
+            <div class="id-player">
+              <img src="./assets/images/battleroom-open/player.svg" alt="" />
+              <p class="id-player-desc">
+                Davis <br />
+                <span style="color: #f8d05f; font-size: 16px">#2114968</span>
+              </p>
+            </div>
+            <div class="burger-menu">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
 
-          <form class="login-form">
-            <div class="form-input">
-              <input type="text" class="form-input-item" placeholder="Login*" />
-              <input
-                type="password"
-                class="form-input-item"
-                placeholder="Password*"
-              />
+          <div class="account-action-adaptive">
+            <div class="account">
+              <img src="./assets/images/battleroom-open/shield.svg" alt="" />
+              <p class="account-info">
+                <span style="color: #ff3449">Account not verified</span> <br />
+                <a href="#" onclick="showNextPopup('fifthPopup')">Verify Now</a>
+              </p>
+            </div>
+            <button class="aside-btn"><p class="desc">Marshal</p></button>
+
+            <div id="fifthPopup" class="popup prompt-container-verification">
+              <form>
+                <div class="prompt-content">
+                  <img
+                    src="./assets/images/battleroom-open/plus.svg"
+                    class="prompt-icon prompt-icon-plus-ver"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/images/verification/verification.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="prompt-title" style="padding: 0">
+                    Let's get you verified
+                  </p>
+                  <p class="prompt-desc white">
+                    Before you start, prepare your identity document and make
+                    sure it is valid.
+                  </p>
+                  <p class="prompt-desc white">
+                    We also require you to agree to the processing of your
+                    personal data:
+                  </p>
+                  <p
+                    class="prompt-desc white"
+                    style="font-size: 16px; font-weight: 500"
+                  >
+                    I'm a resident or live in:
+                  </p>
+                  <div class="verify-block-checkmark">
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox1" />
+                      <label for="idCardCheckbox1" class="desc white"
+                        >United States Of America
+                      </label>
+                    </div>
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox2" />
+                      <label for="idCardCheckbox2" class="desc white"
+                        >Other</label
+                      >
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-continue"
+                    onclick="hidePopup('fifthPopup'); showNextPopup('sixthPopup')"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div id="sixthPopup" class="popup prompt-container-verification">
+              <form>
+                <div class="prompt-content">
+                  <img
+                    src="./assets/images/battleroom-open/plus.svg"
+                    class="prompt-icon prompt-icon-plus-ver"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/images/verification/verification.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="prompt-title" style="padding: 0">
+                    Let's get you verified
+                  </p>
+                  <p class="desc white" style="padding: 0; text-align: center">
+                    Identity document
+                  </p>
+                  <img
+                    src="./assets/images/verification/step-1.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="desc white">Select issuing country</p>
+                  <!---->
+                  <div class="dropdown-country">
+                    <button onclick="toggleDropdown()" class="dropbtn">
+                      <img
+                        src="./assets/images/flags/usa.svg"
+                        style="height: 25px"
+                        alt=""
+                      />
+                      United States
+                      <div class="ver-aroow">
+                        <img
+                          src="./assets/images/verification/arrow.svg"
+                          alt=""
+                        />
+                      </div>
+                    </button>
+                  </div>
+                  <p class="desc white">Choose your document type</p>
+                  <div class="verify-block-checkmark">
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox3" />
+                      <label for="idCardCheckbox3" class="desc white"
+                        >ID card
+                      </label>
+                    </div>
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox4" />
+                      <label for="idCardCheckbox4" class="desc white"
+                        >Passport</label
+                      >
+                    </div>
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox5" />
+                      <label for="idCardCheckbox5" class="desc white"
+                        >Residence permit</label
+                      >
+                    </div>
+                    <div class="choice">
+                      <input type="checkbox" id="idCardCheckbox6" />
+                      <label for="idCardCheckbox6" class="desc white"
+                        >Driver`slicense</label
+                      >
+                    </div>
+                  </div>
+                  <p class="desc white">The document should be:</p>
+                  <p class="desc white">- bright and clear,</p>
+                  <p class="desc white">
+                    - all corners of the document should be visible.
+                  </p>
+                  <div class="upload">
+                    <input type="file" id="fileInput" name="fileInput" />
+                    <label for="fileInput">
+                      <img
+                        class="upload-img"
+                        src="./assets/images/verification/upload.svg"
+                        alt="Загрузить файл"
+                      />
+                    </label>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-continue"
+                    onclick="hidePopup('sixthPopup'); showNextPopup('seventhPopup')"
+                  >
+                    Next
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div id="seventhPopup" class="popup prompt-container-verification">
+              <form>
+                <div class="prompt-content">
+                  <img
+                    src="./assets/images/battleroom-open/plus.svg"
+                    class="prompt-icon prompt-icon-plus-ver"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/images/verification/verification.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="prompt-title" style="padding: 0">Step 2</p>
+                  <p class="desc white" style="padding: 0; text-align: center">
+                    Email verification
+                  </p>
+                  <img
+                    src="./assets/images/verification/step-2.svg"
+                    class="prompt-icon"
+                    alt=""
+                  />
+                  <p class="desc white">Enter your email</p>
+                  <input
+                    type="email"
+                    name=""
+                    class="input-email"
+                    placeholder="Email*"
+                    id=""
+                  />
+                  <div class="verification-code-block">
+                    <input
+                      type="text"
+                      placeholder="_ _ _ _"
+                      class="enter-code"
+                      maxlength="4"
+                      pattern="[0-9]{4}"
+                    />
+                    <button type="submit" class="send-code">Send code</button>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-continue"
+                    onclick="hidePopup('seventhPopup'); showNextPopup('eighthPopup')"
+                  >
+                    Continue
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div id="eighthPopup" class="popup prompt-container-verification">
+              <div class="prompt-content">
+                <div class="confetti">
+                  <div class="successfully-verified">
+                    <img
+                      src="./assets/images/verification/verification.svg"
+                      class="prompt-icon"
+                      style="margin: 0 auto"
+                      alt=""
+                    />
+                    <p class="prompt-title" style="padding: 0">
+                      Successfully verified
+                    </p>
+                    <p
+                      class="desc white"
+                      style="padding: 0; text-align: center"
+                    >
+                      You are now verified!
+                    </p>
+                    <a
+                      href="./battleroom-live.html"
+                      class="btn-continue"
+                      onclick="hidePopup('eighthPopup')"
+                    >
+                      Ok
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="account-balance">
+              <a href="#" class="main-balance-btn" style="color: #fff">
+                <img src="./assets/images/battleroom-open/bank.svg" alt="" />
+                <p class="desc">Main <br />Balance</p>
+                <p class="desc green">₮ 1,000</p>
+              </a>
+              <hr class="table-hr" />
+              <div class="row2">
+                <a href="#" class="score-points-btn">
+                  <img src="./assets/images/icons/cup.svg" alt="" />
+                  <p class="desc">
+                    Score Points
+                    <br />
+                    <span class="green"> ✪ 234572</span>
+                  </p>
+                </a>
+                <hr class="hr-vertical" />
+                <a href="#" class="battlecoin-btn">
+                  <img src="./assets/images/icons/battlecoine.svg" alt="" />
+                  <p class="desc">
+                    Battle coin
+                    <br />
+                    <span class="green"> 100</span>
+                  </p>
+                </a>
+              </div>
             </div>
 
-            <a href="./battleroom-open.html" class="login-btn">Join Now</a>
-
-            <p class="clue">
-              <a href="./forgot-password.html" class="desc"
-                >I forgot my password</a
-              >
-              <br />
-              If you are not yet registered, then go through the
-              <a href="./registration.html" class="desc">registration</a>
-              first.
-            </p>
-          </form>
+            <a href="./deposit.html" class="account-action-btn"
+              ><div class="text-img">
+                <img
+                  src="./assets/images/battleroom-open/deposit.svg"
+                  alt=""
+                />Deposit
+              </div></a
+            >
+            <a href="./withdrawal.html" class="account-action-btn"
+              ><div class="text-img">
+                <img
+                  src="./assets/images/battleroom-open/withdrawal.svg"
+                  alt=""
+                />Withdrawal
+              </div></a
+            >
+            <a href="./transactions.html" class="account-action-btn"
+              ><div class="text-img">
+                <img
+                  src="./assets/images/battleroom-open/transaction.svg"
+                  alt=""
+                />Tranactions
+              </div></a
+            >
+            <a
+              href="./personal-settings-notverified.html"
+              class="account-action-btn"
+              ><div class="text-img">
+                <img
+                  src="./assets/images/battleroom-open/settings.svg"
+                  alt=""
+                />Personal Settings
+              </div></a
+            >
+            <a href="./mybattles.html" class="account-action-btn click"
+              ><div class="text-img">
+                <img src="./assets/images/icons/sword.svg" alt="" /> My Battles
+              </div></a
+            >
+            <a href="./leaderboard.html" class="account-action-btn"
+              ><div class="text-img">
+                <img src="./assets/images/battleroom-open/crown.svg" alt="" />
+                Leaderboard
+              </div></a
+            >
+            <a href="./followers.html" class="account-action-btn"
+              ><div class="text-img">
+                <img src="./assets/images/icons/people.svg" alt="" /> Followers
+              </div></a
+            >
+            <a href="./support.html" class="account-action-btn"
+              ><div class="text-img">
+                <img src="./assets/images/battleroom-open/support.svg" alt="" />
+                Support
+              </div></a
+            >
+          </div>
         </div>
-      </div>
+      </header>
 
-      <footer class="login-footer">
-        <p class="footer-title">Regulations & Partners</p>
-        <img
-          src="./assets/images/login/partners.svg"
-          style="inline-size: fit-content"
-          alt=""
-        />
-        <p class="footer-copyright">© 2024 StockBattle. All rights reserved.</p>
-      </footer>
+      <main class="battleroom-background mybattles">
+        <div class="battleroom">
+          <div class="nav">
+            <div class="row2">
+              <div class="month-time-adaptive">
+                <img src="./assets/images/icons/clock.svg" alt="" />
+                <p id="currentMonth"></p>
+                <hr />
+                <p id="currentTime"></p>
+              </div>
+              <img
+                src="./assets/images/login/logout.svg"
+                alt=""
+                class="nav-logout"
+              />
+            </div>
+            <img
+              src="./assets/images/login/logo_2.svg"
+              class="battleroom-logo"
+              alt=""
+            />
+            <a href="./battleroom-open.html" class="click"
+              ><div class="text-img">
+                <img src="./assets/images/nav-icons/bull.svg" alt="" />BATTLE
+                ROOM
+              </div>
+            </a>
+
+            <a href="./viproom-open.html">
+              <div class="text-img">
+                <img src="./assets/images/nav-icons/crown.svg" alt="" />VIP ROOM
+              </div>
+            </a>
+            <a href="./pokerroom-open.html">
+              <div class="text-img">
+                <img src="./assets/images/nav-icons/chips.svg" alt="" />POKER
+                ROOM
+              </div>
+            </a>
+            <a href="./stockvsstock-open.html">
+              <div class="text-img">
+                <img src="./assets/images/nav-icons/vs-icon.svg" alt="" />STOCK
+                VS STOCK
+              </div>
+            </a>
+            <div class="row2">
+              <div class="month-time">
+                <img src="./assets/images/icons/clock.svg" alt="" />
+                <p id="currentMonth"></p>
+                <hr />
+                <p id="currentTime"></p>
+              </div>
+
+              <img
+                src="./assets/images/login/logout.svg"
+                alt=""
+                class="nav-logout"
+              />
+            </div>
+          </div>
+
+          <div class="battleroom-filter-menu">
+            <div class="battleroom-filter">
+              <div class="category">
+                <button class="filter-button">My Battles</button>
+                <button class="filter-button active">Active</button>
+                <a
+                  href="./mybattles-active.html"
+                  class="category-choose-stock click"
+                >
+                  <p class="desc">Active</p>
+                </a>
+                <a
+                  href="./mybattles-finished.html"
+                  class="category-choose-stock"
+                >
+                  <p class="desc">Finished</p>
+                </a>
+                <a href="./mybattles.html" class="category-choose-stock">
+                  <p class="desc">Show all</p>
+                </a>
+              </div>
+            </div>
+            <div class="first-part center">
+              <div class="select">
+                <p class="desc">My Battles</p>
+                <button class="filter-button active">Active</button>
+              </div>
+            </div>
+            <div class="second-part center">
+              <div
+                class="filter-container options-container"
+                data-options-id="options1"
+              >
+                <button
+                  class="category-choose-stock"
+                  onclick="toggleMenu(this)"
+                >
+                  <p class="desc">Active</p>
+                  <img src="./assets/images/battleroom-open/arrow.svg" alt="" />
+                </button>
+
+                <div class="options">
+                  <a href="./mybattles-active.html" class="status white"
+                    >Active</a
+                  >
+                  <a href="./mybattles-finished.html" class="status"
+                    >Finished</a
+                  >
+                  <a href="./mybattles.html" class="status">Show all</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="all-battles mybattles-active">
+            <div class="battle-card">
+              <div class="battle-card-top">
+                <div class="vertical-menu-item-left">
+                  <img src="./assets/images/nav-icons/bull.svg" alt="" />
+                  <p class="title">Play $250</p>
+
+                  <div class="joined">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                </div>
+                <div class="vertical-menu-item-right">
+                  <p class="stock-item-time mybattles-none">
+                    Joined in <span class="white">15:30PM</span> <br />
+                    Ends in <span class="time white">6ч 29м 31с </span>
+                  </p>
+                  <div class="joined-adaptive">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                  <p class="number-stocks-adaptive">
+                    <span class="white">3</span> stock selected
+                  </p>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <p class="percent-text none">0.000%</p>
+                  <a
+                    href="./mybattle-active-battleroom-250.html"
+                    class="stock-item-btn"
+                    style="background: #19125d"
+                    >View Players</a
+                  >
+
+                  <div class="block-flex-mybattles">
+                    <p class="stock-item-time">
+                      Joined in <span class="white">15:30PM</span>
+                    </p>
+                    <p class="stock-item-time">
+                      Ends in <span class="time white">6ч 29м 31с </span>
+                    </p>
+                  </div>
+
+                  <img
+                    src="./assets/images/battleroom-open-viewplayers/arrow.svg"
+                    alt=""
+                    class="arrow"
+                  />
+                </div>
+              </div>
+              <div class="hidden-info">
+                <div class="hidden-info-one">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-two">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-three">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="battle-card">
+              <div class="battle-card-top">
+                <div class="vertical-menu-item-left">
+                  <img src="./assets/images/nav-icons/bull.svg" alt="" />
+                  <p class="title">Free room 2</p>
+
+                  <div class="joined">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                </div>
+                <div class="vertical-menu-item-right">
+                  <p class="stock-item-time mybattles-none">
+                    Joined in <span class="white">15:30PM</span> <br />
+
+                    Ends in <span class="time white">6ч 29м 31с </span>
+                  </p>
+
+                  <div class="joined-adaptive">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                  <p class="number-stocks-adaptive">
+                    <span class="white">3</span> stock selected
+                  </p>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <p class="percent-text none">0.000%</p>
+
+                  <a
+                    href="./mybattle-active-free-room2.html"
+                    class="stock-item-btn"
+                    style="background: #19125d"
+                    >View Players</a
+                  >
+                  <div class="block-flex-mybattles">
+                    <p class="stock-item-time">
+                      Joined in <span class="white">15:30PM</span>
+                    </p>
+
+                    <p class="stock-item-time">
+                      Ends in <span class="time white">6ч 29м 31с </span>
+                    </p>
+                  </div>
+                  <img
+                    src="./assets/images/battleroom-open-viewplayers/arrow.svg"
+                    alt=""
+                    class="arrow"
+                  />
+                </div>
+              </div>
+              <div class="hidden-info">
+                <div class="hidden-info-one">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-two">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-three">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="battle-card">
+              <div class="battle-card-top">
+                <div class="vertical-menu-item-left">
+                  <img src="./assets/images/nav-icons/chips.svg" alt="" />
+                  <p class="title">Play $50</p>
+                  <div class="joined">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                </div>
+                <div class="vertical-menu-item-right">
+                  <p class="stock-item-time mybattles-none">
+                    Joined in <span class="white">15:30PM</span> <br />
+
+                    Ends in <span class="time white">6ч 29м 42с </span>
+                  </p>
+                  <div class="joined-adaptive">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <p class="percent-text none">0.000%</p>
+                  <p class="number-stocks-adaptive">
+                    <span class="white">3</span> stock selected
+                  </p>
+                  <a
+                    href="./mybattle-active-pokerroom-$50.html"
+                    class="stock-item-btn"
+                    style="background: #19125d"
+                    >View Players</a
+                  >
+
+                  <div class="block-flex-mybattles">
+                    <p class="stock-item-time">
+                      Joined in <span class="white">15:30PM</span>
+                    </p>
+
+                    <p class="stock-item-time">
+                      Ends in <span class="time white">6ч 29м 31с </span>
+                    </p>
+                  </div>
+                  <img
+                    src="./assets/images/battleroom-open-viewplayers/arrow.svg"
+                    alt=""
+                    class="arrow"
+                  />
+                </div>
+              </div>
+              <div class="hidden-info">
+                <div class="hidden-info-one">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-two">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-three">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="battle-card">
+              <div class="battle-card-top">
+                <div class="vertical-menu-item-left">
+                  <img src="./assets/images/nav-icons/crown.svg" alt="" />
+                  <p class="title">Team Play 1vs1</p>
+                  <div class="joined">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                </div>
+                <div class="vertical-menu-item-right">
+                  <p class="stock-item-time mybattles-none">
+                    Joined in <span class="white">15:30PM</span> <br />
+
+                    Ends in <span class="time white">6ч 29м 31с </span>
+                  </p>
+                  <div class="joined-adaptive">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+                  <p class="percent-text none">0.000%</p>
+                  <p class="number-stocks-adaptive">
+                    <span class="white">3</span> stock selected
+                  </p>
+                  <a
+                    href="./mybattle-active-vip-room-1vs1.html"
+                    class="stock-item-btn"
+                    style="background: #19125d"
+                    >View Players</a
+                  >
+                  <div class="block-flex-mybattles">
+                    <p class="stock-item-time">
+                      Joined in <span class="white">15:30PM</span>
+                    </p>
+
+                    <p class="stock-item-time">
+                      Ends in <span class="time white">6ч 29м 31с </span>
+                    </p>
+                  </div>
+                  <img
+                    src="./assets/images/battleroom-open-viewplayers/arrow.svg"
+                    alt=""
+                    class="arrow"
+                  />
+                </div>
+              </div>
+              <div class="hidden-info">
+                <div class="hidden-info-one">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-two">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-three">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="battle-card">
+              <div class="battle-card-top">
+                <div class="vertical-menu-item-left">
+                  <img src="./assets/images/nav-icons/vs-icon.svg" alt="" />
+                  <p class="title">Stock room 1</p>
+                  <div class="joined">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                </div>
+
+                <div class="vertical-menu-item-right">
+                  <p class="stock-item-time mybattles-none">
+                    Joined in <span class="white">15:30PM</span> <br />
+
+                    Starts in <span class="time white">6ч 29м 31с </span>
+                  </p>
+                  <div class="joined-adaptive">
+                    <img
+                      src="./assets/images/battleroom-live/chevron.svg"
+                      alt=""
+                    />
+                    <p class="joined-text">Joined</p>
+                  </div>
+                  <div class="abbreviation">
+                    <p class="desc">MSFT</p>
+                  </div>
+
+                  <p class="percent-text none">0.000%</p>
+                  <p class="number-stocks-adaptive">
+                    <span class="white">3</span> stock selected
+                  </p>
+                  <a
+                    href="./mybattles-active-stockroom.html"
+                    class="stock-item-btn"
+                    style="background: #19125d"
+                    >View Players</a
+                  >
+                  <div class="block-flex-mybattles">
+                    <p class="stock-item-time">
+                      Joined in <span class="white">15:30PM</span>
+                    </p>
+
+                    <p class="stock-item-time">
+                      Ends in <span class="time white">6ч 29м 31с </span>
+                    </p>
+                  </div>
+                  <img
+                    src="./assets/images/battleroom-open-viewplayers/arrow.svg"
+                    alt=""
+                    class="arrow"
+                  />
+                </div>
+              </div>
+              <div class="hidden-info">
+                <div class="hidden-info-one">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-two">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+                <div class="hidden-info-three">
+                  <div class="vertical-menu-item-left">
+                    <img
+                      src="./assets/images/battleroom-open-viewplayers/horse-gold.svg"
+                      alt=""
+                    />
+                    <p class="desc">Microsoft Corp. MSFT</p>
+                  </div>
+
+                  <div class="vertical-menu-item-right">
+                    <p class="desc">0.000%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="load-more-btn">
+              Load more
+              <img src="./assets/images/poker-room/return.svg" alt="" />
+            </button>
+          </section>
+        </div>
+        <footer
+          class="login-footer login-footer-mybattles"
+          style="position: relative !important"
+        >
+          <p class="footer-title">Regulations & Partners</p>
+          <img
+            src="./assets/images/login/partners.svg"
+            style="inline-size: fit-content"
+            alt=""
+          />
+          <p class="footer-copyright">
+            © 2024 StockBattle. All rights reserved.
+          </p>
+        </footer>
+      </main>
     </div>
   </body>
+  <script src="./assets/script.js"></script>
 </html>
