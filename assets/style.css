@@ -1235,7 +1235,7 @@
 /*/////////////// Page Battleroom open\\\\\\\\\\\\*/
 
 .block {
-  display: none;
+  display: flex;
   flex-direction: row;
 }
 .block-support-1 {
